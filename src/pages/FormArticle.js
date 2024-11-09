@@ -6,10 +6,10 @@ import {db} from '../firebase/config'
 import './create.css'
 
 export default function Create() {  
-  const [title, setTitle] = useState('')
-  const [author, setAuthor] = useState('')
-  const [description, setDescription] = useState('')
-  
+
+  const title = useRef(null);
+  const author = useRef(null);
+  const description = useRef(null);
   const navigate = useNavigate()
   
 
@@ -35,8 +35,7 @@ export default function Create() {
           <span>Title:</span>
           <input 
             type="text" 
-            onChange={(e) => setTitle(e.target.value)}
-            value={title}
+            ref = {title}
             required
           />
         </label>
@@ -45,8 +44,7 @@ export default function Create() {
           <span>Author:</span>
           <input 
             type="text" 
-            onChange={(e) => setAuthor(e.target.value)}
-            value={author}
+            ref={author}
             required
           />
         </label>
@@ -54,8 +52,7 @@ export default function Create() {
         <label>
           <span>Description:</span>
           <textarea 
-            onChange={(e) => setDescription(e.target.value)}
-            value={description}
+            ref={description}
             required
           />
         </label>
