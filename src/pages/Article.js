@@ -35,6 +35,7 @@ export default function Article() {
           <h2>{article.title}</h2>
           <p>By {article.author}</p>
           <p>{article.description}</p>
+          <button>Edit</button>
         </div>
       )}
     </div>
